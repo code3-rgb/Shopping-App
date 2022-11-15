@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -29,6 +30,32 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, nil)
 }
 
+type people struct {
+	Name            string `json:"Name"`
+	Email           string `json:"Email"`
+	Password        string `json:"Password"`
+	PasswordConfirm string `json:"PasswordConfirm"`
+}
+
+func form(w http.ResponseWriter, r *http.Request) {
+
+	err := r.ParseForm()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Fprintln(w, "<h1>Welcome to you!!!</h1>", r.Form.Get("Name"))
+
+	var p = people{
+		Name:            r.FormValue("Name"),
+		Email:           r.FormValue("Email"),
+		Password:        r.FormValue("Password"),
+		PasswordConfirm: r.FormValue("PasswordConfirm"),
+	}
+
+	fmt.Println(p.Name)
+
+}
+
 func Router() {
 	router := http.HandleFunc
 
@@ -37,5 +64,6 @@ func Router() {
 
 	router("/", home)
 	router("/hello", hello)
+	router("/form", form)
 
 }

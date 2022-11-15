@@ -6,10 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Page</title>
     <link rel="stylesheet" href="./assets/css/hello.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <h1>How are you Doing?</h1>
-    
+    <div class="container">
+        
+    <div class="form-body">
+        <button class="show"></button>
+
+        <div class="wallpaper">
+            <div class="music">
+                <h2>
+                    Bring Your Music Along
+                </h2>
+                <h3>try Unlimited</h3>
+            </div>
+
+            <div class="price">
+                <h1>
+                    $9.99/Month
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="registration">
+            <form action="http://localhost:3000/form" method="post">
+
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" name="Name" placeholder="Full Name" />
+                </div>
+
+                <div>
+                    <label>Your Email</label>
+                    <input type="text" name="Email" placeholder="Email" />
+                </div>
+
+                <div>
+                    <label>Password</label>
+                    <input type="password" name="Password" value="Password" />
+                </div>
+
+                <div>
+                    <label>Confirm Password</label>
+                    <input type="password" name="PasswordConfirm" />
+                </div>
+
+
+                <button class="register">Register</button>
+                <p>
+                    By Signing up you agree to the <span class="service">Play Term of Service</span>
+                </p>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        const show = document.getElementsByClassName("show")[0]
+        const wallpaper = document.getElementsByClassName("wallpaper")[0]
+        const registration = document.getElementsByClassName("registration")[0]
+
+        show.onclick = (e)=> {
+            // wallpaper.style.visibility = "hidden"
+
+
+            if(wallpaper.style.width == "0%") {
+                wallpaper.style.width = "100%"
+                wallpaper.style.visibility = "visible"
+
+                registration.style.width = "0%"
+                registration.style.visibility = "hidden"
+
+            }   else {
+                wallpaper.style.visibility = "hidden"
+                wallpaper.style.width = "0%"
+
+                registration.style.width = "100%"
+                registration.style.visibility = "visible"
+            }
+
+            // registration.style.width = "100%"
+            // wallpaper.style.visibility = "visible"
+
+        }
+
+    </script>
+
 </body>
 </html>

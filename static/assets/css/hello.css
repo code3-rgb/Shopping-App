@@ -1,3 +1,130 @@
-h1 {
-    color: red;
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cd4f74;
+}
+
+
+.form-body {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.wallpaper {
+    color: white;
+    display: flex;
+    width: 100%;
+    font-size: 1.3rem;
+    background: purple;
+    transition: 0.3s ease-in;
+    flex-direction: column;
+}
+
+.wallpaper .music{
+    padding: 2rem;
+    height: 80%;
+}
+
+.form-body .show {
+    top: 70%;
+    left: 75%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    position: absolute;
+    background: transparent;
+    background: url(../images/arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    animation: rotation 4s infinite;
+}
+.wallpaper .music .show:hover {
+    background-color: rgba(240, 248, 255, 0.267);
+}
+
+.registration {
+    width: 0;
+    display: flex;
+    visibility: hidden;
+    transition: 0.3s ease-in;
+    flex-direction: column;
+}
+.registration form {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background: rgb(37, 35, 35);
+}
+.registration form div {
+    display: flex;
+    padding: 0.2rem;
+    flex-direction: column;
+}
+.registration form div label {
+    color: white;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.4rem;
+
+}
+.registration form div input {
+    width: 87%;
+    border: none;
+    font-size: 1.8rem;
+    align-self: center;
+    border-radius: 0.3rem;
+    background: transparent;
+
+}
+.registration form button {
+    color: white;
+    font-size: 2rem;
+    border-style: none;
+    align-self: center;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+
+}
+.registration form p {
+    color: white;
+    padding: 1.3rem;
+    text-align: center;
+}
+
+@media (min-width:450px) {
+    .form-body {
+        width: 450px;
+    }
+}
+@media (min-width:500px) {
+    .form-body {
+        width: 350px;
+    }
+    .form-body .registration {
+        padding: 0;
+    }
+    .form-body .registration form div input {
+        padding: 0.3rem;
+        font-size: 1rem;
+        border: 2px solid black;
+    }
+    .form-body .registration form div label {
+        font-size: 1.1rem;
+    }
+
 }
